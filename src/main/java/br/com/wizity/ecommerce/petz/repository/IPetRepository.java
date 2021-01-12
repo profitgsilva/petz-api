@@ -18,22 +18,22 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.wizity.ecommerce.petz.entity.Customer;
+import br.com.wizity.ecommerce.petz.entity.Pet;
 
 /**
  * @author Gilson de Andrade Silva
  * 
- * Define the data repository for customer operations.
+ * Define the data repository for pet operations.
  *
  */
-public interface ICustomerRepository extends JpaRepository<Customer, Long> {
+public interface IPetRepository extends JpaRepository<Pet, Long> {
 	
 	/**
-	 * Find customer by identification.
+	 * Find pet by identification.
 	 * 
-	 * @param The identification of customer found.
+	 * @param The identification of pet found.
 	 * @return Customer if found.
 	 */
-	public Optional<Customer> findById (Long id);
+	public Optional<Pet> findById (Long id);
 
 }

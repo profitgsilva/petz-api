@@ -16,43 +16,43 @@ package br.com.wizity.ecommerce.petz.service;
 
 import java.util.Optional;
 
-import br.com.wizity.ecommerce.petz.entity.Customer;
+import br.com.wizity.ecommerce.petz.entity.Pet;
 
 /**
  * @author Gilson de Andrade Silva
  * 
- * Service interface to Customer.
+ * Service interface to Pet.
  *
  */
-public interface CustomerService {
+public interface PetService {
 	
 	/**
-	 * Create new customer.
+	 * Create new pet.
 	 * 
-	 * @param Customer
-	 * @return Customer if created.
+	 * @param Pet
+	 * @return Pet if created.
 	 */
-	public Customer create (Customer customer) throws Exception;
+	public Pet create (Pet pet) throws Exception;
 	
 	/**
-	 * Get customer.
+	 * Get pet.
 	 * 
 	 * @param id
-	 * @return Customer if found.
+	 * @return Pet if found.
 	 */
-	public Optional<Customer> read (Long id) throws Exception;
+	public Optional<Pet> read (Long id) throws Exception;
 	
 	/**
-	 * Update customer.
+	 * Update pet.
 	 * 
 	 * @param id
 	 * @param details
-	 * @return Customer if found.
+	 * @return Pet if found.
 	 */
-	public Customer update (Long id, Customer detail) throws Exception;
+	public Pet update (Long id, Pet detail) throws Exception;
 	
 	/**
-	 * Delete customer.
+	 * Delete pet.
 	 * 
 	 * @param id
 	 * @return True if deleted.
