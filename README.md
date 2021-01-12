@@ -1,2 +1,2 @@
-# petz-api
-Rest API para integração de sistemas.
+# Petz-api
+Rest API Petz.
