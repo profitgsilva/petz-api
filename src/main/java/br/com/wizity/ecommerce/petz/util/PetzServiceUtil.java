@@ -37,7 +37,7 @@ public class PetzServiceUtil {
 		
 		try {
 			
-			File file = new File ("/var/run/secrets/app/account/database/username/username");
+			File file = new File ("/opt/app/petz/secret/database/username/username");
 			scanner = new Scanner(file);
 			return scanner.nextLine();
 			
@@ -56,7 +56,7 @@ public class PetzServiceUtil {
 		
 		try {
 			
-			File file = new File ("/var/run/secrets/app/account/database/password/password");
+			File file = new File ("/opt/app/petz/secret/database/password/password");
 			scanner = new Scanner(file);
 			return scanner.nextLine();
 			
