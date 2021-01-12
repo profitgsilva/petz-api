@@ -33,7 +33,7 @@ public class Customer extends BaseEntity<Long> {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idUser", nullable=false, unique=true, insertable=true, updatable=true )
+	@Column(name="idCustomer", nullable=false, unique=true, insertable=true, updatable=true )
 	private Long id;
 	
 	@Column(name="name",  length=250, nullable=false, unique=false)
