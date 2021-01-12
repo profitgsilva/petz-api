@@ -16,9 +16,12 @@ package br.com.wizity.ecommerce.petz.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -41,16 +44,21 @@ public class Pet extends BaseEntity<Long> {
 	
 	@Column(name="age", nullable=false, unique=false)
 	private Integer age;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "idCustomer")
+	private Customer customer;
 
 	public Pet() {		
 	}
 	
-	public Pet(Long id, String name, Integer age) {	
+	public Pet(Long id, String name, Integer age, Customer customer) {	
 		
 		super();
 		this.id = id;			
 		this.name = name;
 		this.age = age;
+		this.customer = customer;
 		
 	}
 	
@@ -76,6 +84,14 @@ public class Pet extends BaseEntity<Long> {
 
 	public void setAge(Integer age) {
 		this.age = age;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }

@@ -16,6 +16,10 @@ COMMENT ON SCHEMA petz_service_schema IS 'Defines the database structure of the 
 DROP SEQUENCE IF EXISTS petz_service_schema.CUSTOMERS_IDCUSTOMER_SEQ;
 CREATE SEQUENCE petz_service_schema.CUSTOMERS_IDCUSTOMER_SEQ INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
 
+DROP SEQUENCE IF EXISTS petz_service_schema.PETS_IDPET_SEQ;
+CREATE SEQUENCE petz_service_schema.PETS_IDPET_SEQ INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
+
+
 --CREATE TABLES PETZ SERVICE
 CREATE TABLE petz_service_schema.Customers (
   idCustomer INTEGER NOT NULL DEFAULT NEXTVAL('petz_service_schema.CUSTOMERS_IDCUSTOMER_SEQ'),
@@ -24,5 +28,15 @@ CREATE TABLE petz_service_schema.Customers (
 );
 ALTER TABLE petz_service_schema.Customers ADD CONSTRAINT PKEY_BY_IDCUSTOMER PRIMARY KEY(idCustomer);
 
+CREATE TABLE petz_service_schema.Pets (
+  idPet INTEGER NOT NULL DEFAULT NEXTVAL('petz_service_schema.PETS_IDPET_SEQ'),
+  idCustomer INTEGER NOT NULL,
+  name VARCHAR(250) NOT NULL,
+  age INTEGER NOT NULL
+);
+ALTER TABLE petz_service_schema.Pets ADD CONSTRAINT PKEY_BY_IDPET PRIMARY KEY(idPet);
+ALTER TABLE petz_service_schema.Pets ADD CONSTRAINT FK_CUSTOMER_PET FOREIGN KEY(idCustomer) REFERENCES petz_service_schema.Customers(idCustomer) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
 --SELECT TEST PETZ SERVICE DATABASE
 SELECT * FROM petz_service_schema.Customers;
+SELECT * FROM petz_service_schema.Pets;
