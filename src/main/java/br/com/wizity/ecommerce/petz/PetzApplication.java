@@ -31,12 +31,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableCaching
-public class AccountApplication {
+public class PetzApplication {
 
 	public static void main(String[] args) throws Exception {
 		
 		SpringApplication app;
-		app = new SpringApplication(AccountApplication.class);
+		app = new SpringApplication(PetzApplication.class);
 		app.run(args);
 		
 	}
