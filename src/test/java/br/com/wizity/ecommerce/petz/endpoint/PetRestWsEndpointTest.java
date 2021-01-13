@@ -45,17 +45,17 @@ public class PetRestWsEndpointTest extends PetzApplicationTest {
 	}
 	
 	@Test
-	public void testReadCustomer() throws Exception {
+	public void testReadPet() throws Exception {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/public/read/pet/1")).andExpect(MockMvcResultMatchers.status().isOk());
 	}
 	
 	@Test
-	public void testUpdateCustomer() throws Exception {
+	public void testUpdatePet() throws Exception {
 		this.mockMvc.perform(MockMvcRequestBuilders.put("/public/update/pet/1").content("{'name':\"Sptiz\", \"age\":3, \"customer\":{\"id\":2}}")).andExpect(MockMvcResultMatchers.status().isOk());
 	}
 	
 	@Test
-	public void testDeleteCustomer() throws Exception {
+	public void testDeletePet() throws Exception {
 		this.mockMvc.perform(MockMvcRequestBuilders.delete("/public/delete/pet/1")).andExpect(MockMvcResultMatchers.status().isOk());
 	}
 
