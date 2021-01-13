@@ -27,36 +27,36 @@ import br.com.wizity.ecommerce.petz.PetzApplicationTest;
  * @author Gilson de Andrade Silva
  *
  */
-public class CustomerRestWsEndpointTest extends PetzApplicationTest {
+public class PetRestWsEndpointTest extends PetzApplicationTest {
 	
 	private MockMvc mockMvc;
 	
 	@Autowired
-	private CustomerRestWsEndpoint customerRestWsEndpoint;
+	private PetRestWsEndpoint petRestWsEndpoint;
 	
 	@Before
 	public void setUp() {
-		this.mockMvc = MockMvcBuilders.standaloneSetup(customerRestWsEndpoint).build();
+		this.mockMvc = MockMvcBuilders.standaloneSetup(petRestWsEndpoint).build();
 	}
 	
 	@Test
-	public void testCreateCustomer() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.post("/public/create/customer").content("{'name':\"Maria Silva\", \"email\":\"maria@gmail.com\"}")).andExpect(MockMvcResultMatchers.status().isOk());
+	public void testCreatePet() throws Exception {
+		this.mockMvc.perform(MockMvcRequestBuilders.post("/public/create/pet").content("{'name':\"Sptiz\", \"age\":1, \"customer\":{\"id\":2}}")).andExpect(MockMvcResultMatchers.status().isOk());
 	}
 	
 	@Test
 	public void testReadCustomer() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.get("/public/read/customer/1")).andExpect(MockMvcResultMatchers.status().isOk());
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/public/read/pet/1")).andExpect(MockMvcResultMatchers.status().isOk());
 	}
 	
 	@Test
 	public void testUpdateCustomer() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.put("/public/update/customer/1").content("{'name':\"Maria Silva\", \"email\":\"msilva@gmail.com\"}")).andExpect(MockMvcResultMatchers.status().isOk());
+		this.mockMvc.perform(MockMvcRequestBuilders.put("/public/update/pet/1").content("{'name':\"Sptiz\", \"age\":3, \"customer\":{\"id\":2}}")).andExpect(MockMvcResultMatchers.status().isOk());
 	}
 	
 	@Test
 	public void testDeleteCustomer() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.delete("/public/delete/customer/1")).andExpect(MockMvcResultMatchers.status().isOk());
+		this.mockMvc.perform(MockMvcRequestBuilders.delete("/public/delete/pet/1")).andExpect(MockMvcResultMatchers.status().isOk());
 	}
 
 }
