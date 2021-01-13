@@ -17,8 +17,8 @@ POST: Cadastro de clientes
 http://petz-api-profit-saas-listbus.b9ad.pro-us-east-1.openshiftapps.com/petz/api/v1/public/create/customer
 Payload
 {
-	"name" : "Sergio Zimerman",
-	"email" : "sergio@petz.com.br"
+	"name" : "Rachel Zane",
+	"email" : "zane@gmail.com"
 }
 
 GET: Consulta de cliente por ID
@@ -28,8 +28,8 @@ PUT: Atualização do cadastro de clientes
 http://petz-api-profit-saas-listbus.b9ad.pro-us-east-1.openshiftapps.com/petz/api/v1/public/update/customer/1
 Payload
 {
-	"name" : "Sergio Zimerman",
-	"email" : "sergio@petz.com.br"
+	"name" : "Rachel Zane",
+	"email" : "zane@gmail.com"
 }
 
 DELETE: Exclusão de clientes cadastrado
